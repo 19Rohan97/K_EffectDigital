@@ -1,7 +1,112 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-*{
-  font-family: 'Poppins', sans-serif;
+/********** Start of Back-to-Top Button  ************/
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #ec1313;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #ec1313;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+  z-index: 10;
+}
+#back-to-top-btn:hover,
+#back-to-top-btn:focus {
+  background-color: #ec1313;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  #back-to-top-btn {
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+@media (max-width: 768px) {
+  #back-to-top-btn {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    bottom: 6px;
+    right: 6px;
+  }
+}
+
+/* Animations */
+.btnEntrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+/* zoomIn */
+/* @keyframes btnEntrance { 
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 1;
+  }    
+} */
+
+/* fadeInUp */
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: btnExit;
+}
+/* zoomOut */
+/* @keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+} */
+
+/* fadeOutDown */
+@keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+/********** End of Back-to-Top Button  ************/
+
+/*  */
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 .fab {
@@ -15,7 +120,7 @@
   margin-right: 4px;
   color: green;
 }
-/************** Navigation Bar **************/
+/************** Start of Navigation Bar **************/
 #navbar {
   background: rgba(255, 255, 255, 1);
   width: 100%;
@@ -46,8 +151,9 @@
     margin-right: 0 !important;
   }
 }
+/********** End of Navigation Bar  ************/
 
-/************** Banner Section **************/
+/************** Start of Banner Section **************/
 
 .banner {
   position: relative;
@@ -84,21 +190,32 @@
     font-size: 3em !important;
   }
 }
+/********** End of Banner Section  ************/
 
-/************** What we do Section **************/
+/************** Start of What we do Section **************/
 
 .whatWeDo {
   display: flex;
   justify-content: center;
-  height: 62vh;
+  height: 53vh;
 }
 .whatWeDo .card {
-  width: 100%;
+  width: 60vw !important;
   margin: 20px;
   margin-right: 40px;
   -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
+}
+.whatWeDo .card h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.whatWeDo .card a {
+  text-decoration: none;
+}
+.whatWeDo .card a:hover {
+  color: #ec1313;
 }
 .whatWeDo .card img {
   max-width: 100px;
@@ -108,27 +225,56 @@
   border-radius: 50%;
 }
 .whatWeDo .card ul li {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
 }
-
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .whatWeDo {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+  }
+}
+@media (max-width: 768px) {
+  .whatWeDo {
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     justify-content: center;
     align-items: center;
   }
+  .whatWeDo .card {
+    width: 40% !important;
+  }
+  .whatWeDo .card ul li {
+    font-size: 14px;
+  }
 }
+@media (max-width: 500px) {
+  .whatWeDo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .whatWeDo .card {
+    width: 100% !important;
+  }
+  .whatWeDo .card ul li {
+    font-size: 14px;
+  }
+}
+/********** End of What we do Section  ************/
 
-/************** Standards Section **************/
+/************** Start of Standards Section **************/
 .standards {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .standards .card {
-  width: 100%;
+  /* width: 100% !important; */
   margin: 20px;
   margin-right: 40px;
   -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
@@ -136,20 +282,47 @@
   box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
   height: 40vh;
 }
+.standards .card h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.standards .card p {
+  font-size: 20px;
+}
 .standards img {
   width: 80px;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .standards {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     justify-content: center;
     align-items: center;
   }
+  .standards .card {
+    width: 40% !important;
+    height: 30vh;
+  }
 }
+@media (max-width: 500px) {
+  .standards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .standards .card {
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 20px !important;
+  }
+}
+/********** End of Standards section  ************/
 
-/************** How we do Section **************/
+/************** Start of How we do Section **************/
 
 .howWeDo {
   display: flex;
@@ -158,6 +331,7 @@
 }
 .howWeDo .card {
   width: 100%;
+  height: 40vh !important;
   padding: 10px;
   margin: 20px;
   margin-right: 40px;
@@ -170,16 +344,35 @@
   width: 80px;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .howWeDo {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     justify-content: center;
     align-items: center;
   }
+  .howWeDo .card {
+    height: 30vh !important;
+  }
+}
+@media (max-width: 500px) {
+  .howWeDo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .howWeDo .card {
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 
-/************** Contact Section **************/
+/********** End of How we do section ************/
+
+/************** Start of Contact Section **************/
 #contact {
   display: grid;
   grid-template-columns: 80% 20%;
@@ -187,12 +380,12 @@
   margin-bottom: 0 !important;
   padding: 1rem;
 }
-.contact-num{
+.contact-num {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#contact a{
+#contact a {
   border: 1px solid #fff;
   padding: 15px 25px;
   border-radius: 30px;
@@ -200,28 +393,29 @@
   text-decoration: none;
   transition: 0.3s all ease-in-out;
 }
-#contact a:hover{
+#contact a:hover {
   background-color: #fff;
   color: #ec1313;
 }
 @media (max-width: 768px) {
-  #contact{
+  #contact {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  #contact a{
+  #contact a {
     border: 1px solid #fff;
     padding: 15px 15px;
   }
-  #contact h1{
+  #contact h1 {
     font-size: 24px;
   }
-  #contact p{
+  #contact p {
     font-size: 14px;
   }
 }
+/********** End of Contact section  ************/
 
-/************** Footer Section **************/
+/************** Start of Footer Section **************/
 footer {
   margin-top: 0 !important;
 }
@@ -254,3 +448,4 @@ footer h3 {
 .contact a {
   color: #fff;
 }
+/********** End of Footer section  ************/
