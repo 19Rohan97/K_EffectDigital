@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .fab {
@@ -85,98 +85,265 @@
   }
 }
 
-/************** What we do Section **************/
-
-.whatWeDo {
-  display: flex;
+/************** Teams Section **************/
+.ceo {
+  display: flex !important;
   justify-content: center;
-  height: 62vh;
+  align-items: center;
 }
-.whatWeDo .card {
+
+.ceo .wrapper {
+  height: 300px;
+  width: 260px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.ceo .wrapper .card {
+  position: absolute;
+  height: 100%;
   width: 100%;
-  margin: 20px;
-  margin-right: 40px;
-  -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-.whatWeDo .card img {
-  max-width: 100px;
-  margin: 0 auto;
-  margin-top: 10px;
-  border: 3px solid #ec1313;
+.ceo .wrapper .front-face {
+  backface-visibility: hidden;
+}
+.ceo .wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.ceo .wrapper .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.ceo .wrapper .back-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.ceo .wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.ceo .wrapper .back-face img {
+  height: 100px;
+  width: 100px;
+  padding: 5px;
   border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #2ede98);
 }
-.whatWeDo .card ul li {
-  font-size: 14px;
-  line-height: 28px;
+.ceo .wrapper .back-face .info {
+  text-align: center;
 }
-
-@media (max-width: 600px) {
-  .whatWeDo {
-    flex-direction: column;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
+.ceo .back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
 }
-
-/************** Standards Section **************/
-.standards {
+.ceo .back-face ul {
   display: flex;
+}
+.ceo .back-face ul a {
+  display: block;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 30px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #ec1313);
+  transition: all 0.5s ease;
+}
+.ceo .back-face ul a:hover {
+  color: #ec1313;
+  border-color: #ec1313;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+
+/************** Teams Section **************/
+.meetTheTeam {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
   justify-content: center;
   align-items: center;
 }
-.standards .card {
-  width: 100%;
+.meetTheTeam .wrapper {
+  height: 350px;
+  width: 280px;
   margin: 20px;
-  margin-right: 40px;
-  -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  height: 40vh;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
 }
-.standards img {
-  width: 80px;
-  margin: 0 auto;
+.meetTheTeam .wrapper .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-@media (max-width: 600px) {
-  .standards {
-    flex-direction: column;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
+.meetTheTeam .wrapper .front-face {
+  backface-visibility: hidden;
 }
-
-/************** How we do Section **************/
-
-.howWeDo {
+.meetTheTeam .wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.meetTheTeam .wrapper .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.meetTheTeam .wrapper .back-face {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.meetTheTeam .wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.meetTheTeam .wrapper .back-face img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #2ede98);
+}
+.meetTheTeam .wrapper .back-face .info {
+  text-align: center;
+}
+.meetTheTeam .back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.meetTheTeam .back-face ul {
+  display: flex;
+}
+.meetTheTeam .back-face ul a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #ec1313);
+  transition: all 0.5s ease;
+}
+.meetTheTeam .back-face ul a:hover {
+  color: #ec1313;
+  border-color: #ec1313;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+
+/************** To be hired Section **************/
+
+.vacancy {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
   justify-content: center;
   align-items: center;
 }
-.howWeDo .card {
-  width: 100%;
-  padding: 10px;
+.vacancy .wrapper {
+  height: 350px;
+  width: 280px;
   margin: 20px;
-  margin-right: 40px;
-  -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
-  height: 50vh;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
 }
-.howWeDo img {
-  width: 80px;
-  margin: 0 auto;
+.vacancy .wrapper .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-@media (max-width: 600px) {
-  .howWeDo {
-    flex-direction: column;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
+.vacancy .wrapper .front-face {
+  backface-visibility: hidden;
+}
+.vacancy .wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.vacancy .wrapper .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.vacancy .wrapper .back-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.vacancy .wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.vacancy .wrapper .back-face img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #2ede98);
+}
+.vacancy .wrapper .back-face .info {
+  text-align: center;
+}
+.vacancy .back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.vacancy .back-face ul {
+  display: flex;
+  flex-direction: column;
+}
+.vacancy .back-face ul a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #ec1313, #ec1313);
+  transition: all 0.5s ease;
+}
+.vacancy .back-face ul a:hover {
+  color: #ec1313;
+  border-color: #ec1313;
+  background: linear-gradient(375deg, transparent, transparent);
 }
 
 /************** Contact Section **************/
@@ -187,12 +354,12 @@
   margin-bottom: 0 !important;
   padding: 1rem;
 }
-.contact-num{
+.contact-num {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#contact a{
+#contact a {
   border: 1px solid #fff;
   padding: 15px 25px;
   border-radius: 30px;
@@ -200,23 +367,23 @@
   text-decoration: none;
   transition: 0.3s all ease-in-out;
 }
-#contact a:hover{
+#contact a:hover {
   background-color: #fff;
   color: #ec1313;
 }
 @media (max-width: 768px) {
-  #contact{
+  #contact {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  #contact a{
+  #contact a {
     border: 1px solid #fff;
     padding: 15px 15px;
   }
-  #contact h1{
+  #contact h1 {
     font-size: 24px;
   }
-  #contact p{
+  #contact p {
     font-size: 14px;
   }
 }
