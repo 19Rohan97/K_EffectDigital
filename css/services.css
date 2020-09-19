@@ -32,6 +32,10 @@
 #navbar .navbar-brand-sub {
   font-size: 7px;
 }
+#navbar .active {
+  font-weight: 600;
+  color: #ec1313 !important;
+}
 @media (max-width: 768px) {
   #navbar img,
   #navbar .navbar-brand {

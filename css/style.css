@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-
-
 /*  */
 * {
   font-family: "Poppins", sans-serif;
@@ -35,6 +33,10 @@
 }
 #navbar .navbar-brand-sub {
   font-size: 7px;
+}
+#navbar .active {
+  font-weight: 600;
+  color: #ec1313 !important;
 }
 
 @media (max-width: 768px) {
@@ -94,77 +96,95 @@
 
 /************** Start of What we do Section **************/
 
-.whatWeDo {
-  display: flex;
-  justify-content: center;
-  height: 53vh;
-}
-.whatWeDo .card {
-  width: 60vw !important;
-  margin: 20px;
-  margin-right: 40px;
+.testimonial {
+  background: #e4e4e4;
+  /* text-align: center; */
+  padding: 30px 30px 70px;
+  margin: 0 15px 100px;
+  position: relative;
+  margin-top: 20px;
   -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.75);
 }
-.whatWeDo .card h5 {
-  font-size: 1.5rem;
+
+.testimonial::before,
+.testimonial::after {
+  content: "";
+  border-top: 40px solid #e4e4e4;
+  border-right: 125px solid transparent;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+.testimonial::after {
+  border-right: none;
+  border-left: 125px solid transparent;
+  left: auto;
+  right: 0;
+}
+.testimonial .icon {
+  display: inline-block;
+  font-size: 80px;
+  color: #000;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+.testimonial .description {
+  font-size: 16px;
+  color: #000;
+  text-align: left !important;
+  /* margin-bottom: 30px; */
+  opacity: 0.9;
+  /* letter-spacing: -1px; */
+}
+.testimonial .description ul li {
   font-weight: 600;
+
 }
-.whatWeDo .card a {
+.testimonial .testimonial-content {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  text-align: center;
+}
+.testimonial .pic {
+  display: inline-block;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px #f4770b;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+.testimonial .pic img {
+  width: 100%;
+  height: auto;
+}
+.testimonial .title {
+  font-size: 19px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 0 0 5px 0;
+}
+.testimonial .title a{
   text-decoration: none;
+  transition: 0.3s all ease-in-out;
 }
-.whatWeDo .card a:hover {
+.testimonial .title a:hover{
   color: #ec1313;
 }
-.whatWeDo .card img {
-  max-width: 100px;
-  margin: 0 auto;
-  margin-top: 10px;
-  border: 3px solid #ec1313;
-  border-radius: 50%;
+.testimonial .post {
+  display: block;
+  font-size: 14px;
+  color: #ffd9b8;
 }
-.whatWeDo .card ul li {
-  font-size: 16px;
-  line-height: 28px;
+.pic img {
+  width: 100px !important;
+  height: 50px;
 }
-@media (max-width: 992px) {
-  .whatWeDo {
-    display: flex;
-    justify-content: center;
-    height: 60vh;
-  }
-}
-@media (max-width: 768px) {
-  .whatWeDo {
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
-  .whatWeDo .card {
-    width: 40% !important;
-  }
-  .whatWeDo .card ul li {
-    font-size: 14px;
-  }
-}
-@media (max-width: 500px) {
-  .whatWeDo {
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
-  .whatWeDo .card {
-    width: 100% !important;
-  }
-  .whatWeDo .card ul li {
-    font-size: 14px;
-  }
-}
+
 /********** End of What we do Section  ************/
 
 /************** Start of Standards Section **************/

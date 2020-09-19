@@ -32,6 +32,10 @@
 #navbar .navbar-brand-sub {
   font-size: 7px;
 }
+#navbar .active {
+  font-weight: 600;
+  color: #ec1313 !important;
+}
 @media (max-width: 768px) {
   #navbar img,
   #navbar .navbar-brand {
@@ -51,7 +55,7 @@
 
 .banner {
   position: relative;
-  background: url(../images/banner.jpg);
+  background: url(../images/about/landing.jpg);
   min-height: 100vh;
   background-size: cover;
   background-position: center;
