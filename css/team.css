@@ -58,11 +58,24 @@
   background-repeat: no-repeat;
   padding: 250px 0 200px;
 }
+.banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .banner-content p {
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-weight: 300 !important;
+  color: #fff !important;
 }
 .banner-content h2 {
   font-size: 4em !important;
+  color: #fff !important;
+}
+.banner-content h4 {
+  color: #fff !important;
+  margin: 20px auto;
 }
 .banner-btn {
   background: #ec1313;

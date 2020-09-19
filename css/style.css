@@ -36,6 +36,7 @@
 #navbar .navbar-brand-sub {
   font-size: 7px;
 }
+
 @media (max-width: 768px) {
   #navbar img,
   #navbar .navbar-brand {
